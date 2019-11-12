@@ -4,7 +4,11 @@ Vue Component with online/offline slots
 
 ## Project setup
 ```
-yarn install vue-online-offline
+npm install vue-online-offline
+```
+or
+```
+yarn add vue-online-offline
 ```
 
 ## Usage
@@ -18,7 +22,7 @@ yarn install vue-online-offline
 </template>
 
 <script>
-import VueOnlineOffline from 'vue-online-offline
+import VueOnlineOffline from 'vue-online-offline'
 
 export default {
   components: { VueOnlineOffline },
