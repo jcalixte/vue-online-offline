@@ -1,6 +1,6 @@
 {
   "name": "vue-online-offline",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-online-offline",
@@ -11,6 +11,10 @@
   "files": [
     "dist/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcalixte/vue-online-offline"
+  },
   "dependencies": {
     "core-js": "^3.3.2",
     "vue": "^2.6.10"
