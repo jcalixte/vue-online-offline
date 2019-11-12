@@ -1,10 +1,9 @@
 {
   "name": "vue-online-offline",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-online-offline",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

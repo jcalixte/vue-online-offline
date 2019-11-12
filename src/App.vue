@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="online-view">
+    <slot v-if="online"></slot>
+    <slot v-else name="offline"></slot>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script lang="ts">
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      online: navigator.onLine
+    };
+  },
+  mounted() {
+    window.addEventListener("online", this.onchange);
+    window.addEventListener("offline", this.onchange);
+    this.onchange();
+  },
+  beforeDestroy() {
+    window.removeEventListener("online", this.onchange);
+    window.removeEventListener("offline", this.onchange);
+  },
+  methods: {
+    onchange() {
+      this.online = navigator.onLine;
+      this.$emit(this.online ? "online" : "offline");
+    }
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
