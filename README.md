@@ -1,24 +1,35 @@
 # vue-online-offline
 
+Vue Component with online/offline slots
+
 ## Project setup
 ```
-yarn install
+yarn install vue-online-offline
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Usage
 
-### Compiles and minifies for production
-```
-yarn build
-```
+```vue
+<template>
+  <vue-online-offline @online="isOnline" @offline="isOffline">
+    <div slot="online">I'm online! 🎉</div>
+    <div slot="offline">I'm offline. 🤨</div>
+  </vue-online-offline>
+</template>
 
-### Lints and fixes files
-```
-yarn lint
-```
+<script>
+import VueOnlineOffline from 'vue-online-offline
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+export default {
+  components: { VueOnlineOffline },
+  methods: {
+    isOnline() {
+      console.log(`Now I'm online!`)
+    },
+    isOffline() {
+      console.log(`Now I'm offline.`)
+    }
+  }
+}
+</script>
+```
