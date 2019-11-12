@@ -1,6 +1,6 @@
 <template>
   <div class="online-view">
-    <slot v-if="online"></slot>
+    <slot v-if="online" name="online"></slot>
     <slot v-else name="offline"></slot>
   </div>
 </template>
