@@ -4,13 +4,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-online-offline",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare": "yarn build",
+    "release": "release-it"
   },
-  "main": "./dist/vue-online-offline.common.js",
+  "main": "dist/vue-online-offline.common.js",
+  "types": "dist/App.vue.d.ts",
   "license": "MIT",
-  "files": [
-    "dist/*"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jcalixte/vue-online-offline"
@@ -26,6 +26,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "release-it": "^14.0.4",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
